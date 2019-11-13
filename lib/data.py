@@ -62,16 +62,16 @@ def load_deep1b(device, size = 10 ** 6, test=True, qsize=10 ** 5):
     return xt, xb, xq, gt
 
 
-def load_bigann(device, size = 10 ** 5, test=True, qsize=10 ** 4):
+def load_bigann(device, size = 10 ** 4, test=True, qsize=10 ** 4):
     basedir = getBasedir("bigann")
 
-    dbsize = int(size / 10 ** 5)
+    dbsize = int(size / 10 ** 4)
     xt = mmap_fvecs(join(basedir, 'bigann_learn.fvecs'))
     if test:
         xb = mmap_fvecs(join(basedir, 'bigann_base.fvecs'))
         xq = mmap_fvecs(join(basedir, 'bigann_query.fvecs'))
         # trim xb to correct size
-        xb = xb[:dbsize * (10 ** 5)]
+        xb = xb[:dbsize * (10 ** 4)]
         gt = ivecs_read(join(basedir, 'bigann_groundtruth.ivecs'))
     else:
         xb = xt[:size]
