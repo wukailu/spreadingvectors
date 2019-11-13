@@ -66,10 +66,10 @@ def load_bigann(device, size = 10 ** 6, test=True, qsize=10 ** 5):
     basedir = getBasedir("bigann")
 
     dbsize = int(size / 10 ** 6)
-    xt = mmap_bvecs(join(basedir, 'bigann_learn.bvecs'))
+    xt = mmap_fvecs(join(basedir, 'bigann_learn.fvecs'))
     if test:
-        xb = mmap_bvecs(join(basedir, 'bigann_base.bvecs'))
-        xq = mmap_bvecs(join(basedir, 'bigann_query.bvecs'))
+        xb = mmap_fvecs(join(basedir, 'bigann_base.fvecs'))
+        xq = mmap_fvecs(join(basedir, 'bigann_query.fvecs'))
         # trim xb to correct size
         xb = xb[:dbsize * 1000 * 1000]
         gt = ivecs_read(join(basedir, 'gnd/idx_%dM.ivecs' % dbsize))
