@@ -71,7 +71,7 @@ def load_bigann(device, size = 10 ** 4, test=True, qsize=10 ** 4):
         xb = mmap_fvecs(join(basedir, 'bigann_base.fvecs'))
         xq = mmap_fvecs(join(basedir, 'bigann_query.fvecs'))
         # trim xb to correct size
-        xb = xb[:dbsize * (10 ** 4)]
+#         xb = xb[:dbsize * (10 ** 4)]
         gt = ivecs_read(join(basedir, 'bigann_groundtruth.ivecs'))
     else:
         xb = xt[:size]
