@@ -32,7 +32,7 @@ if __name__ == "__main__":
                         default="auto")
     parser.add_argument("--gpu", action='store_true', default=False)
     parser.add_argument("--quantizer", required=True)
-    parser.add_argument("--size-base", type=int, default=int(1e6))
+    parser.add_argument("--size_base", type=int, default=int(1e6))
     parser.add_argument("--val", action='store_false', dest='test')
     parser.set_defaults(gpu=False, test=True)
 
