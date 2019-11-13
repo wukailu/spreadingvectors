@@ -78,7 +78,7 @@ def load_bigann(device, size = 10 ** 5, test=True, qsize=10 ** 4):
         xq = xt[size:size+qsize]
         xt = xt[size+qsize:]
 
-    print("train:%d, val:%d, test:%d"% (len(xt), len(xb), len(xq)))
+    print("train:%d, val:%d, test:%d, size:%d"% (len(xt), len(xb), len(xq), size))
     xb, xq = sanitize(xb), sanitize(xq)
     if not test:
         gt = get_nearestneighbors(xq, xb, 100, device)
